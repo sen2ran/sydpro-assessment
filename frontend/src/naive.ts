@@ -39,6 +39,7 @@ import {
   NMessageProvider,
   NLoadingBarProvider,
   NDataTable,
+  NSelect,
 } from "naive-ui";
 
 export default create({
@@ -80,5 +81,6 @@ export default create({
     NMessageProvider,
     NLoadingBarProvider,
     NDataTable,
+    NSelect,
   ],
 });
