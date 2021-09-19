@@ -37,8 +37,9 @@ import {
   NConfigProvider,
   NDialogProvider,
   NMessageProvider,
-  NLoadingBarProvider
-} from 'naive-ui'
+  NLoadingBarProvider,
+  NDataTable,
+} from "naive-ui";
 
 export default create({
   components: [
@@ -77,6 +78,7 @@ export default create({
     NConfigProvider,
     NDialogProvider,
     NMessageProvider,
-    NLoadingBarProvider
-  ]
-})
+    NLoadingBarProvider,
+    NDataTable,
+  ],
+});
