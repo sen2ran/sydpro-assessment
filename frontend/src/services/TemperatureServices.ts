@@ -9,3 +9,6 @@ const instance = axios.create({
 
 export const GetAllTemperatureDeatils = async () =>
   useAsyncAwait(instance.get(`/temperature`));
+
+export const GetChartByTimeIntervel = async (timeIntervel: number) =>
+  useAsyncAwait(instance.get(`/temperature/chart/${timeIntervel}`));
