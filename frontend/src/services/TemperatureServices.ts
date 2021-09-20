@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useAsyncAwait } from "../utils/asyncAwaitHook";
 
-const baseURL = "http://localhost:8081/api/";
+const baseURL = "http://localhost:3001/api/";
 
 const instance = axios.create({
   baseURL: baseURL,
