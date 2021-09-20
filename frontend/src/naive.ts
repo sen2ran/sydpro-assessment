@@ -40,6 +40,9 @@ import {
   NLoadingBarProvider,
   NDataTable,
   NSelect,
+  NFormItem,
+  NRadioGroup,
+  NRadioButton,
 } from "naive-ui";
 
 export default create({
@@ -82,5 +85,8 @@ export default create({
     NLoadingBarProvider,
     NDataTable,
     NSelect,
+    NFormItem,
+    NRadioGroup,
+    NRadioButton,
   ],
 });
