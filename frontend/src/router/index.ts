@@ -31,6 +31,9 @@ const history = createWebHistory();
 const router = createRouter({ history, routes });
 router.afterEach((to: any) => {
   const items = [import.meta.env.VITE_TITLE];
+  /**
+   * To Change Document header in HTML
+   */
   to.meta.title != null && items.unshift(to.meta.title);
   document.title = items.join(" · ");
 });

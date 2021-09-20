@@ -18,10 +18,14 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, onMounted, watch } from "vue";
+import { useMessage } from "naive-ui";
 
 import { GetChartByTimeIntervel } from "../services/TemperatureServices";
 import Chart from "../components/Chart/Chart.vue";
 
+/**
+ * Adding Interface for type checking
+ */
 interface IOptions {
   label: string;
   value: number;
@@ -39,9 +43,11 @@ export default defineComponent({
     Chart,
   },
   setup() {
+    const message = useMessage();
+
     const data: IChart = reactive({
       options: [],
-      value: "1",
+      value: "12",
       chartData: {},
       reRenderKey: Number(new Date()),
     });
@@ -54,12 +60,21 @@ export default defineComponent({
         };
       });
 
-      const [chartData, chartErr] = await GetChartByTimeIntervel("1");
+      /**
+       *Defult value set as 12hr
+       */
+      const [chartData, chartErr] = await GetChartByTimeIntervel("12");
+      if (chartErr) {
+        message.error("Something went wrong");
+      }
       data.chartData.value = chartData.data.data.data;
       data.chartData.labels = chartData.data.data.labels;
       data.reRenderKey = Number(new Date());
     });
 
+    /**
+     * When Value change get the chart data from backend
+     */
     watch(
       () => data.value,
       async (count) => {

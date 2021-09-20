@@ -32,6 +32,10 @@ import {
 } from "../services/TemperatureServices";
 import { isHexaNumber } from "../utils/isHexaNumber";
 
+/**
+ * Adding Interface for type checking
+ */
+
 interface IColumn {
   title: string;
   key: string;
@@ -54,26 +58,7 @@ export default defineComponent({
     });
 
     const data: IDataTable = reactive({
-      columns: [],
-      data: [],
-      pagination: {
-        IColumn: 10,
-      },
-    });
-
-    const message = useMessage();
-    onMounted(() => {
-      GetAllTemperatureCol();
-    });
-
-    const GetAllTemperatureCol = async () => {
-      const [listData, listErr] = await GetAllTemperatureDeatils();
-
-      if (listErr) {
-        return listErr;
-      }
-
-      data.columns = [
+      columns: [
         {
           title: "Date",
           key: "date",
@@ -92,7 +77,26 @@ export default defineComponent({
           title: "Big Endian Message",
           key: "bigEndianMessage",
         },
-      ];
+      ],
+      data: [],
+      pagination: {
+        IColumn: 10,
+      },
+    });
+
+    const message = useMessage();
+    onMounted(() => {
+      /**
+       * Get All the Data to added to table
+       */
+      GetAllTemperatureCol();
+    });
+
+    const GetAllTemperatureCol = async () => {
+      const [listData, listErr] = await GetAllTemperatureDeatils();
+      if (listErr) {
+        return listErr;
+      }
       data.data = listData.data.data;
     };
 

@@ -9,8 +9,6 @@
   </n-layout-header>
 </template>
 
-<script lang="ts"></script>
-
 <style scoped>
 .n-layout-header {
   position: sticky;

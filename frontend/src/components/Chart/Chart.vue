@@ -22,8 +22,8 @@ export default {
       chart: null,
       /**
        * Mauplating "props.chartData"
-       * 1> Creating Y axis from "props.chartData"
-       * 2> Creating X axis from "props.chartData"
+       * 1> Creating Y axis from "props.chartData.value"
+       * 2> Creating X axis from "props.chartData.lable"
        */
       options: computed(() => {
         return {
@@ -47,7 +47,7 @@ export default {
           },
           dataLabels: {
             enabled: true,
-            formatter: function (val: String) {
+            formatter: function (val: string) {
               return val;
             },
             offsetY: -20,

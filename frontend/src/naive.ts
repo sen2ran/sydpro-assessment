@@ -1,3 +1,6 @@
+/**
+ * Naïve UI - A Vue 3 Component Library
+ */
 import {
   // create naive ui
   create,
