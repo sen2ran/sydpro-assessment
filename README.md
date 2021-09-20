@@ -1,8 +1,6 @@
 # Sydpro Assessment
 
-## Vue 3 + Vite + NaïveUI
-
-## Express JS + CsvParse + Moment
+## Vue 3 + Vite + NaïveUI And Express JS + CsvParse + Moment
 
 ![N|Solid](https://github.com/sen2ran/sydpro-assessment/blob/main/Screenshot.gif?raw=true)
 
