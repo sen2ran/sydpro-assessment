@@ -2,6 +2,9 @@ const fs = require('fs');
 const parse = require('csv-parse')
 const moment = require('moment')
 
+/**
+ * TO read CSSV file
+ */
 const csvToJson = async (path) => {
     return new Promise((resolve, reject) => {
         fs.readFile(path, (error, data) => {
@@ -22,6 +25,9 @@ const csvToJson = async (path) => {
     })
 }
 
+/**
+ * well formated obj
+ */
 const hexToData = (data) => {
     return {
         ...data,
@@ -31,7 +37,9 @@ const hexToData = (data) => {
         date: moment(new Date(data.time)).format('MM/DD/YYYY')
     }
 }
-
+/**
+ * Hex Validation 
+ */
 const isHexaNumber = (s) => {
     const regExp = /^[-+]?[0-9A-Fa-f]+\.?[0-9A-Fa-f]*?$/;
     return typeof s === "string" && regExp.test(s);
