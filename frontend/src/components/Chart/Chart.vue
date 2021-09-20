@@ -96,7 +96,7 @@ export default {
             },
           },
           title: {
-            text: "Equipment Type",
+            text: "Date and time",
             floating: true,
             offsetY: 330,
             align: "center",
