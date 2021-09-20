@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[] = [
         path: "/temperature",
         component: () => import("../views/Temperature.vue"),
         meta: {
-          title: "temperature",
+          title: "Temperature",
         },
       },
       {
