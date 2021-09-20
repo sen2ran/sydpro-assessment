@@ -9,6 +9,7 @@
         :value="singleOption.value"
         v-for="(singleOption, index) in options"
         :key="index"
+        :checked="singleOption.value === value"
         >{{ singleOption.label }}</n-radio-button
       >
     </n-radio-group>
@@ -28,7 +29,7 @@ import Chart from "../components/Chart/Chart.vue";
  */
 interface IOptions {
   label: string;
-  value: number;
+  value: string;
 }
 
 interface IChart {
@@ -56,7 +57,7 @@ export default defineComponent({
       data.options = Array.from(Array(12).keys()).map((x) => {
         return {
           label: `${x + 1} Hours`,
-          value: x + 1,
+          value: `${x + 1}`,
         };
       });
 
