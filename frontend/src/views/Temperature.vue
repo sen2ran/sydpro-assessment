@@ -1,7 +1,7 @@
 <template>
   <n-form inline :label-width="180" size="large" style="padding: 10px">
     <n-form-item
-      label="Name"
+      label="Hex Message"
       :validation-status="formValue.errorMessage ? 'error' : 'success'"
       :feedback="formValue.errorMessage"
     >
@@ -16,7 +16,7 @@
       />
     </n-form-item>
     <n-form-item style="padding-left: 10px">
-      <n-button @click="OnClick">Validate</n-button>
+      <n-button @click="OnClick">Add</n-button>
     </n-form-item>
   </n-form>
 
@@ -35,7 +35,6 @@ import { isHexaNumber } from "../utils/isHexaNumber";
 /**
  * Adding Interface for type checking
  */
-
 interface IColumn {
   title: string;
   key: string;
